@@ -1,0 +1,14 @@
+body {
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+}
+
+.grids {
+    width: 50px;
+    height: 50px;
+    background-color: aqua;
+    border: 1px solid black;
+}
