@@ -2,8 +2,22 @@ body {
     box-sizing: border-box;
 }
 
+h1 {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 #container {
     display: flex;
+    flex-wrap: wrap;
+    width: 850px;
 }
 
 .grids {
@@ -11,4 +25,12 @@ body {
     height: 50px;
     background-color: aqua;
     border: 1px solid black;
+}
+
+.vGrids {
+    width: 50px;
+    height: 50px;
+    background-color: aqua;
+    border: 1px solid black;
+
 }
