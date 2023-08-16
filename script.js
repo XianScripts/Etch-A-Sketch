@@ -2,16 +2,30 @@
 // Create and grab webpage elements
 // const div = document.createElement('div');
 const divContainer = document.querySelector('#container');
+let button = document.querySelector('#grid-size');
+let gridNumber = "";
 // console.log(divContainer);
 
 
-let createGrids = function() {
-    for (let i = 0; i < 16*16; i++) {
+let createGrids = function(x) {
+    let x = '';
+    for (let i = 0; i < x*x; i++) {
         const div = document.createElement('div');
         div.classList.add('grids');
         divContainer.appendChild(div);
     }
+    button.addEventListener('click', () => {
+        gridNumber = prompt("What size grid would you like? Max 100");
+       });
+    if (gridNumber !== "") {
+        for (let i = 0; i < gridNumber*gridNumber; i++) {
+            const div = document.createElement('div');
+            div.classList.add('grids');
+            divContainer.appendChild(div);
+    }
+       
 }
+};
 createGrids();
 
 
@@ -26,13 +40,10 @@ let colorGrides = function() {
 colorGrides();
 
 // Button for custom grid size
-let button = document.querySelector('#grid-size');
-console.log(button);
 
-function gridSize() {
-   button.addEventListener('click', () => {
-    let gridNumber = prompt("What size grid would you like? Max 100");
-   });
-
-};
-
+// function gridSize() {
+//    button.addEventListener('click', () => {
+//     let gridNumber = prompt("What size grid would you like? Max 100");
+//     return gridNumber;
+//    });
+// };
