@@ -17,14 +17,14 @@ createGrids(16);
 
 
 // Setup Hover effects for grid items
-let colorGrides = function() {
+let colorGrids = function() {
     divContainer.addEventListener('mouseover', (e) => {
         // console.log(e.target);
         let cDiv = e.target;
         cDiv.style.backgroundColor = 'black';
     });
 }
-colorGrides();
+colorGrids();
 
 // Button for custom grid size
 let button = document.querySelector('#grid-size');
