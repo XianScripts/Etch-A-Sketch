@@ -4,15 +4,16 @@
 const divContainer = document.querySelector('#container');
 // console.log(divContainer);
 
-
-let createGrids = function() {
-    for (let i = 0; i < 16*16; i++) {
+// Function to create grid
+let createGrids = function(x) {
+    for (let i = 0; i < x*x; i++) {
         const div = document.createElement('div');
         div.classList.add('grids');
         divContainer.appendChild(div);
     }
 }
-createGrids();
+// Default 16x16 Grid
+createGrids(16);
 
 
 // Setup Hover effects for grid items
@@ -27,12 +28,17 @@ colorGrides();
 
 // Button for custom grid size
 let button = document.querySelector('#grid-size');
-console.log(button);
 
+// Button function for custom grid size
 function gridSize() {
    button.addEventListener('click', () => {
+    while(divContainer.firstChild) {
+        divContainer.removeChild(divContainer.firstChild);
+    }
+    
     let gridNumber = prompt("What size grid would you like? Max 100");
+    createGrids(gridNumber);
    });
 
 };
-
+gridSize();
