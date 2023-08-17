@@ -37,7 +37,26 @@ function gridSize() {
     }
     
     let gridNumber = prompt("What size grid would you like? Max 100");
-    createGrids(gridNumber);
+    if (gridNumber === "null" || null || "") {
+        divContainer.style.width = "850px";
+        createGrids(gridNumber);
+
+    }
+    else if (gridNumber >= 25 && gridNumber < 50) {
+        divContainer.style.width = "1000px";
+        createGrids(gridNumber);
+    }
+    else if (gridNumber >= 50 && gridNumber < 75) {
+        divContainer.style.width = "1250px";
+        createGrids(gridNumber);
+    }
+    else if (gridNumber >= 75) {
+        divContainer.style.width = "1500px";
+        createGrids(gridNumber);
+    }
+    else {
+        createGrids(16);
+    }
    });
 
 };
